@@ -1,0 +1,65 @@
+<!-- Calculator 
+Create a simple calculator having functionalities of addition,subtraction,multiplication and division. 
+1.calculator should have 2 input field for first no. and second no. 
+2. dropdown to choose option (+,-,*,/) 
+3. when click a result button output should be displayed in an another text field based on selected option-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            
+            function calculations()
+            {
+                var number1 = parseFloat(document.getElementById('number1').value);
+                var number2 = parseFloat(document.getElementById('number2').value);
+                
+                var operators = document.getElementById('operators').value;
+                
+                if(operators === '+')
+                {
+                    document.getElementById('result').value = number1+number2;
+                }
+                
+                if(operators === '-')
+                {
+                    document.getElementById('result').value = number1-number2;
+                }
+                
+                if(operators === '/')
+                {
+                    document.getElementById('result').value = number1/number2;
+                }
+                
+                if(operators === '*')
+                {
+                    document.getElementById('result').value = number1*number2;
+                }
+            }
+            
+        </script>
+        
+    </head>
+    <center><fieldset style="width: 500px;"><body>
+        <h2><b>CALCULATOR</b></h2>
+        <input type="text" id="number1"/><br/><br/>
+        <input type="text" id="number2"/><br/><br/>
+        
+        <select id="operators">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>&nbsp; &nbsp;
+        
+        <button onclick="calculations()">=</button> <br><br>
+        <input type="text" id="result"/>
+        
+    </body></fieldset></center>
+</html>
