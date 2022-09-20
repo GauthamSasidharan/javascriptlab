@@ -1,22 +1,13 @@
 <!DOCTYPE html>
-
 <html>
-
     <head>
-
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="js-form-validation.css">
-
-
-
         <script>
 function formsubmission(){                                                  
             
-          
-        
             var name=document.formvalidation.name.value;  
             if (name==""){  
               document.getElementById("nameid").innerHTML = "Name required" ;    
@@ -41,8 +32,6 @@ function formsubmission(){
                return false;  
             }
 
-           
-
             var email=document.formvalidation.email.value;   
             var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             
@@ -60,9 +49,6 @@ function formsubmission(){
             else{
                 document.getElementById("emailid").innerHTML = "Email is valid" ;
             }
-
-
-
 
             var phone = document.formvalidation.phonenumber.value;
             var numberonly = /^[0-9]+$/;
@@ -99,8 +85,6 @@ function formsubmission(){
                return false;
             }
 
-
-            
             alert("Your form is submitting......")        
 
            
@@ -114,10 +98,6 @@ function formsubmission(){
     <body>
 
         <div class="container">
-
-           
-
-
 
                     <form method = "post"  action="" name="formvalidation" onsubmit="return formsubmission()">
 
@@ -133,14 +113,11 @@ function formsubmission(){
                         <br>
     
 
-
                         <label for="email">Email</label>
                         <br>
                         <input class="form-control" id="email" name="email"> 
                         <p id="emailid"></p>
                         <br>
-
-                        
 
                         <label for="phone">Phone</label>
                         <br>
@@ -148,12 +125,10 @@ function formsubmission(){
                         <p id="phoneid"></p>
                         <br>
     
-
                         <label for="password">Password</label>
                         <br>
                         <input class="form-control" id="password" name="password" type="password">
-
-                       
+  
                         <br>
 
                         <p id="passwordid"></p>
