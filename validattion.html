@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="js-form-validation.css">
+
+
+
+        <script>
+function formsubmission(){                                                  
+            
+          
+        
+            var name=document.formvalidation.name.value;  
+            if (name==""){  
+              document.getElementById("nameid").innerHTML = "Name required" ;    
+              return false;  
+            }
+
+            else{
+              document.getElementById("nameid").innerHTML = "Name is valid";
+            }
+        
+            if(!/^[a-zA-Z\s]*$/g.test(name)){
+              document.getElementById("nameid").innerHTML = "Name is not valid";      
+              return false  
+            }
+
+            else{
+                document.getElementById("nameid").innerHTML = "Name is valid";
+            }
+
+            if(name.length<3){  
+               document.getElementById("nameid").innerHTML = "Name should have atleast 3 characters";   
+               return false;  
+            }
+
+           
+
+            var email=document.formvalidation.email.value;   
+            var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            
+            if(email ==""){
+                document.getElementById("emailid").innerHTML = "Email required";        
+                return false;
+            }
+
+            if(!emailformat.test(email)){
+                document.getElementById("emailid").innerHTML = "Email is not valid";      
+                return false;
+           
+           }  
+  
+            else{
+                document.getElementById("emailid").innerHTML = "Email is valid" ;
+            }
+
+
+
+
+            var phone = document.formvalidation.phonenumber.value;
+            var numberonly = /^[0-9]+$/;
+            if(phone ==""){
+               document.getElementById("phoneid").innerHTML="Phone number  required";     
+               return false;
+            }
+
+
+            if (!numberonly.test(phone)){
+                document.getElementById("phoneid").innerHTML="Enter a valid phone number";       
+                return false;
+            }
+
+            if(phone.length<10){
+               document.getElementById("phoneid").innerHTML="Enter a valid phone number";     
+               return false;
+            } 
+
+            else{
+                document.getElementById("phoneid").innerHTML="Phone number is valid";
+            }
+
+
+            var password=document.getElementById("password").value; 
+            if(password ==""){
+               document.getElementById("passwordid").innerHTML = "Passwrd required";     
+               return false;
+            }
+            
+
+            if(password.length<6){
+               document.getElementById("passwordid").innerHTML="Passwrd is not strong enough";      
+               return false;
+            }
+
+
+            
+            alert("Your form is submitting......")        
+
+           
+            }
+
+
+
+function hidenseek() {                                                        
+                
+            
+            if( password.type==="password"){
+                password.type = "text" ;                               
+            }
+            else{
+                password.type="password";
+            }
+
+            }
+           
+        </script>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+           
+
+
+
+                    <form method = "post"  action="" name="formvalidation" onsubmit="return formsubmission()">
+
+                        <h3 style="text-align: center;">SIGN UP</h3>
+                        <small>All fields are mandatory</small>
+
+                        <br><br>
+
+                        <label for="name">Name</label>
+                        <br>
+                        <input class="form-control" id="name"  name="name">
+                        <p id="nameid"></p>
+                        <br>
+    
+
+
+                        <label for="email">Email</label>
+                        <br>
+                        <input class="form-control" id="email" name="email"> 
+                        <p id="emailid"></p>
+                        <br>
+
+                        
+
+                        <label for="phone">Phone</label>
+                        <br>
+                        <input class="form-control" id="phone"  name="phonenumber">
+                        <p id="phoneid"></p>
+                        <br>
+    
+
+                        <label for="password">Password</label>
+                        <br>
+                        <input class="form-control" id="password" name="password" type="password">
+
+                        <label for="showpassword" id="passwordlabel">Show password</label>  
+                        <input id="showpassword" type="checkbox"  onclick="hidenseek()"> 
+
+                        <br>
+
+                        <p id="passwordid"></p>
+
+                        <br> <br>
+
+                        <input type="submit"class="btn btn-primary btn-lg" value="Sign up" >
+                  
+                    </form>
+    
+    
+                </div>
+
+            </div>
+
+  
+        </div>
+
+    </body>
+
+</html>
